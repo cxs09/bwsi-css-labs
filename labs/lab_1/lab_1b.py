@@ -44,6 +44,15 @@ def check_num() -> float:
             return num
         except ValueError:
             print("Invalid Number")
+            
+def check_operator() -> str:
+    while True:
+        opr = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+        if opr == "add" or opr == "subtract" or opr == "multiply" or opr == "divide":
+            return opr
+        else:
+            print("Invalid operator")
+            
 
 def main():
     
@@ -53,7 +62,7 @@ def main():
     num1 = check_num()
     num2 = check_num()
             
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    operation = check_operator()
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
